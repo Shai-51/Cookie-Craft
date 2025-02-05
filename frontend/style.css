@@ -1,10 +1,36 @@
-body{
-    background-color: rgb(71, 71, 87);
+/*
+    main colors:
+    255,240,236
+    85,107,141
+    180,200,220
+    194,39,75
+*/
+head{
+    /* 
+     serch bar on the top
+     then account, Home, Shop, About, Contact, Gift Card
+    */
 }
+body{
+    /* 
+        picture of the product
+        name of the product on top
+        button ("Shop Now") that sends you to the login screen --> shop
+    */
+    background-color: rgb(255, 240, 236);
+}
+
 h1{
     text-align: center;
-    color: white;
+    color: rgb(85, 107, 141);
 }
-p{
-    color: white;
+pre{
+    text-align: center;
+    color: rgb(194,39,75);
+}
+#main{
+    background-image: url("res/HomePage.jpeg");
+    margin: auto;
+    width: 1312px;
+    height: 736px;
 }
