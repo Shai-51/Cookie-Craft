@@ -30,7 +30,9 @@ pre{
 }
 #main{
     background-image: url("res/HomePage.jpeg");
-    margin: auto;
     width: 1312px;
     height: 736px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 50px);
 }
