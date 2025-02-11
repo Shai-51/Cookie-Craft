@@ -12,13 +12,9 @@ head{
     */
 }
 body{
-    /* 
-        picture of the product
-        name of the product on top
-        button ("Shop Now") that sends you to the login screen --> shop
-    */
     background-color: rgb(255, 240, 236);
     position: relative;
+    top: 100px;
 }
 
 h1{
@@ -42,4 +38,8 @@ pre{
     right: 450px;
     top: 600px;
     bottom: 100px;
+}
+#menu{
+    position: sticky;
+    top: 0px;
 }
