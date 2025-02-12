@@ -13,8 +13,7 @@ head{
 }
 body{
     background-color: rgb(255, 240, 236);
-    position: relative;
-    top: 100px;
+
 }
 
 h1{
@@ -39,7 +38,27 @@ pre{
     top: 600px;
     bottom: 100px;
 }
-#menu{
-    position: sticky;
-    top: 0px;
+.navBar{
+    overflow: hidden;
+    background-color: rgb(194,39,75);
 }
+.navBar a{
+    float: left;
+    display: block;
+    color: rgb(255,240,236);
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.navBar a:hover {
+    background-color: rgb(255,240,236);
+    color: rgb(85, 107, 141);
+    border: 3px solid rgb(85, 107, 141);
+}
+.topnav a.active {
+    background-color: rgb(85, 107, 141);
+    color: rgb(255,240,236);
+}
+  
+/* https://www.w3schools.com/howto/howto_css_searchbar.asp */
