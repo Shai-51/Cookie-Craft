@@ -25,7 +25,7 @@ pre{
     color: rgb(194,39,75);
 }
 #main{
-    background-image: url("res/HomePage.jpeg");
+    background-image: url("../res/HomePage.jpeg");
     margin: auto;
     width: 1312px;
     height: 736px;
@@ -43,6 +43,7 @@ pre{
     background-color: rgb(194,39,75);
 }
 .navBar a{
+    border: 3px solid rgb(194,39,75);
     float: left;
     display: block;
     color: rgb(255,240,236);
@@ -55,6 +56,7 @@ pre{
     background-color: rgb(255,240,236);
     color: rgb(85, 107, 141);
     border: 3px solid rgb(85, 107, 141);
+    transition: all 1s;
 }
 .topnav a.active {
     background-color: rgb(85, 107, 141);
