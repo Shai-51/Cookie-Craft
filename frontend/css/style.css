@@ -1,16 +1,10 @@
 /*
     main colors:
-    255,240,236
-    85,107,141
-    180,200,220
-    194,39,75
+    255,240,236 - white background
+    85,107,141 -  dark blue blue
+    180,200,220 - bright blue
+    194,39,75 - red
 */
-head{
-    /* 
-     serch bar on the top
-     then account, Home, Shop, About, Contact, Gift Card
-    */
-}
 body{
     background-color: rgb(255, 240, 236);
 
@@ -38,6 +32,7 @@ pre{
     top: 600px;
     bottom: 100px;
 }
+/* navigtion bar: */
 .navBar{
     overflow: hidden;
     background-color: rgb(194,39,75);
