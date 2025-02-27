@@ -1,12 +1,12 @@
 /*
     main colors:
-    255,240,236 - white background
+    v - white background
     85,107,141 -  dark blue blue
     180,200,220 - bright blue
     194,39,75 - red
 */
 body{
-    background-color: rgb(255, 240, 236);
+    background-color: rgb(255,240,236);
 
 }
 
@@ -25,12 +25,18 @@ pre{
     height: 736px;
     position: relative;
 }
-#button{
-    position: absolute;
-    left: 450px;
-    right: 450px;
-    top: 600px;
-    bottom: 100px;
+#shopNowButton{
+    margin-top: 45%;
+    margin-left: 43%;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
 }
 /* navigtion bar: */
 .navBar{
@@ -58,4 +64,3 @@ pre{
     color: rgb(255,240,236);
 }
   
-/* https://www.w3schools.com/howto/howto_css_searchbar.asp */
