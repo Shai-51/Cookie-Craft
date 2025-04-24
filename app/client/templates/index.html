@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Cookie Craft</title>
+</head>
+<body>
+    <div class="navBar">
+        <a class="active" href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('shop') }}">Shop</a>
+        <a href="#contact">Contact</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <!-- <input type="text" placeholder="Search..">  -->
+    </div>
+
+    <div id="main">
+        <button onclick="document.location='{{ url_for('shop') }}'" id="shopNowButton"> Shop Now</button>
+    </div>
+
+    <pre>
+hello my name is shai and i love patrick
+hahahahahahahahah
+    </pre>
+</body>
+</html>

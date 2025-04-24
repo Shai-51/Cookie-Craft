@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Godly Login Screen</title>
-    <link rel="stylesheet" href="../css/loginStyle.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loginStyle.css') }}">
 </head>
 <body>
     <div class="login-container">
         <h1>🌟login🌟</h1>
         <h4>dont have an acount?</h2>
-        <a href="register.html" class="forgot-password">register here</a>
+        <a href="{{ url_for('register') }}" class="forgot-password">register here</a>
         <form action="#" method="post">
             <div class="input-group">
                 <input type="text" name="username" placeholder="Enter your username" required>
@@ -20,9 +20,9 @@
             </div>
             <button type="submit" class="login-button">Login</button>
         </form>
-        <a href="ResetPassword.html" class="forgot-password">Forgot Password?</a>
+        <a href="{{ url_for('reset_password') }}" class="forgot-password">Forgot Password?</a>
         <footer>Crafted with divine inspiration ✨</footer>
     </div>
-    <script src="script.js"></script>
+    <!-- <script src="{{ url_for('static', filename='js/script.js') }}"></script> -->
 </body>
 </html>

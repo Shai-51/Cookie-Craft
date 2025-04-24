@@ -2,13 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const registerForm = document.getElementById("registerForm");
 
     registerForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Stop the form from submitting
+        event.preventDefault(); // Stop the form from submitting initially
 
         const email = document.getElementById("email").value.trim();
         const username = document.getElementById("username").value.trim();
         const password = document.getElementById("password").value;
         const confirmPassword = document.getElementById("confirm_password").value;
 
+        // Validation checks
         if (!validateEmail(email)) {
             alert("Please enter a valid email address.");
             return;
@@ -29,7 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        alert("Registration successful! Form submission is prevented.");
+        // If all validation passes, submit the form
+        this.submit();
     });
 });
 
