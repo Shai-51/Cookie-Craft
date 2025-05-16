@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +12,7 @@
         <h1>🌟login🌟</h1>
         <h4>dont have an acount?</h2>
         <a href="{{ url_for('register') }}" class="forgot-password">register here</a>
-        <form action="#" method="post">
+        <form action="{{ url_for('login') }}" method="post">
             <div class="input-group">
                 <input type="text" name="username" placeholder="Enter your username" required>
             </div>
