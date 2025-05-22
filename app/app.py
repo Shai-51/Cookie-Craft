@@ -36,11 +36,10 @@ def load_user(user_id):
 def home():
     return render_template('index.html')
 
-@app.route('/shop')
+@app.route('/friends')
 @login_required
-def shop():
-    # Only logged-in users can access this
-    return render_template('shop.html')
+def friend():
+    return render_template('friend.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
