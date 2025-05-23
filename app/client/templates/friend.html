@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Cookie Craft Shop</title>
-        <h1>what do you want to buy?</h1>
-    </head>
-    <body>
-        <img src="../static/res/box.png" alt="box" width="400px">
-    </body>
+<head><title>Users List</title></head>
+<body>
+<h1>Registered Users</h1>
+<table border="1">
+    <tr>
+        <th>Username</th><th>Bio</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>{{ user.username }}</td>
+        <td>{{ user.bio }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
 </html>

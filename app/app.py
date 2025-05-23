@@ -27,6 +27,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
     is_admin = db.Column(db.Boolean, default=False)
+    bio = db.Column(db.Text, default='')  # New field
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -39,7 +40,8 @@ def home():
 @app.route('/friends')
 @login_required
 def friend():
-    return render_template('friend.html')
+    users = User.query.all()
+    return render_template('friend.html', users=users)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -112,7 +114,22 @@ def list_users():
 def reset_password():
     return render_template('reset_password.html')
 
+@app.route('/profile', methods=['GET', 'POST'])
+@login_required
+def profile():
+    if request.method == 'POST':
+        new_username = request.form.get('username')
+        new_bio = request.form.get('bio')
+
+        current_user.username = new_username
+        current_user.bio = new_bio
+        db.session.commit()
+        flash("Profile updated successfully!")
+        return redirect(url_for('profile'))
+
+    return render_template('profile.html', user=current_user)
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True)
