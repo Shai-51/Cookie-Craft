@@ -3,12 +3,12 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 import os
+import secrets
 
 app = Flask(__name__,
             template_folder=os.path.abspath('./client/templates'),
             static_folder=os.path.abspath('./static'))
-app.secret_key = 'your_secret_key'
-
+app.secret_key = secrets.token_hex(32)
 # Configure database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
