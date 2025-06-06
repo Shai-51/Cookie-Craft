@@ -1,5 +1,5 @@
 # Import necessary modules and extensions
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
@@ -56,39 +56,50 @@ def friend():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        # Get form data
         username = request.form.get('username')
         email = request.form.get('email')
         password = request.form.get('password')
         confirm_password = request.form.get('confirm_password')
 
-        # Basic validation
+        def is_ajax():
+            return request.headers.get('X-Requested-With') == 'XMLHttpRequest'
+
+        # Basic validations
         if not username or not email or not password:
-            flash('All fields are required!')
+            msg = 'All fields are required!'
+            if is_ajax():
+                return jsonify(success=False, message=msg)
+            flash(msg)
             return redirect(url_for('register'))
 
         if password != confirm_password:
-            flash('Passwords do not match!')
+            msg = 'Passwords do not match!'
+            if is_ajax():
+                return jsonify(success=False, message=msg)
+            flash(msg)
             return redirect(url_for('register'))
 
-        # Check if email already exists
         existing_user = User.query.filter_by(email=email).first()
         if existing_user:
-            flash('Email already registered!')
+            msg = 'Email already registered!'
+            if is_ajax():
+                return jsonify(success=False, message=msg)
+            flash(msg)
             return redirect(url_for('register'))
 
-        # Hash the password before saving
         hashed_password = generate_password_hash(password)
         new_user = User(username=username, email=email, password=hashed_password)
 
-        # Add new user to the database
         db.session.add(new_user)
         db.session.commit()
 
-        flash('Registration successful! Please log in.')
+        msg = 'Registration successful! Please log in.'
+        if is_ajax():
+            return jsonify(success=True, message=msg, redirect_url=url_for('login'))
+        flash(msg)
         return redirect(url_for('login'))
 
-    return render_template('register.html')  # Render registration form
+    return render_template('register.html')
 
 # User login route
 @app.route('/login', methods=['GET', 'POST'])
