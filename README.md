@@ -1,4 +1,4 @@
-# 🍪 Cookie-Craft
+# My high-school website project!
 
 Cookie-Craft is a secure, full-featured Flask web app for user authentication and session-based access. It includes login, registration, admin control, and user profile management.
 
@@ -37,10 +37,6 @@ git clone https://github.com/yourusername/cookie-craft.git
 cd cookie-craft/app
 pip install flask flask_sqlalchemy flask_login werkzeug python-dotenv
 python app.py
-
-
-
-
 
 
 
