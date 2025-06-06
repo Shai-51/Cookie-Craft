@@ -1,6 +1,6 @@
 # My high-school website project!
 
-Cookie-Craft is a secure, full-featured Flask web app for user authentication and session-based access. It includes login, registration, admin control, and user profile management.
+This website is a secure, full-featured Flask web app for user authentication and session-based access. It includes login, registration, admin control, and user profile management.
 
 ---
 
