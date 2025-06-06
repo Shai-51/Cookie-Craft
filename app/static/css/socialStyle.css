@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, rgb(194,39,75), rgb(150, 32, 59), rgb(189, 62, 92));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 2rem;
+}
+
+.profile-container, .table-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    max-width: 700px;
+    width: 100%;
+    text-align: left;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+form label {
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    margin-bottom: 1.5rem;
+}
+
+input:focus,
+textarea:focus {
+    box-shadow: 0px 0px 10px #fff3;
+}
+
+button {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.alert {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+a {
+    color: #ffffffcc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 0.8rem;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.15);
+}

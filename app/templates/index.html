@@ -10,11 +10,12 @@
         <a href="{{ url_for('friend') }}">friends</a>
         <a href="{{ url_for('profile') }}">Bio</a>
         <a href="{{ url_for('login') }}">Login</a>
-        <!-- <input type="text" placeholder="Search..">  -->
+        <a href="{{ url_for('logout') }}">Logout</a>
+
     </div>
 
     <div id="main">
-        <button onclick="document.location='{{ url_for('friend') }}'" id="shopNowButton">Click</button>
+        <button onclick="document.location='{{ url_for('profile') }}'" id="Button">SHARE YOUR BIO</button>
     </div>
 
     <pre>

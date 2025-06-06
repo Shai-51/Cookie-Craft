@@ -8,7 +8,7 @@ import secrets
 
 # Initialize the Flask app with custom paths for templates and static files
 app = Flask(__name__,
-            template_folder=os.path.abspath('./client/templates'),
+            template_folder=os.path.abspath('./templates'),
             static_folder=os.path.abspath('./static'))
 
 # Set a secure secret key for sessions and cookies
@@ -129,6 +129,24 @@ def list_users():
         return redirect(url_for('home'))
     users = User.query.all()
     return render_template('admin_users.html', users=users)
+
+# Admin panel for deleting users — restricted to admin users only
+@app.route('/admin/delete_user/<int:user_id>', methods=['POST'])
+@login_required
+def delete_user(user_id):
+    if not current_user.is_admin:
+        flash("You do not have permission to perform this action.")
+        return redirect(url_for('home'))
+
+    user = User.query.get_or_404(user_id)
+
+    if user.id == current_user.id:
+        flash("You cannot delete your own account as admin.")
+        return redirect(url_for('list_users'))
+
+    db.session.delete(user)
+    db.session.commit()
+    return redirect(url_for('list_users'))
 
 # Password reset page (placeholder for now)
 @app.route('/reset_password')

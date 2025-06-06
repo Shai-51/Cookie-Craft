@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Profile</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/socialStyle.css') }}">
 </head>
 <body>
   <div class="profile-container">
@@ -26,8 +26,13 @@
 
       <button type="submit">Update Profile</button>
     </form>
-
-    <p><a href="{{ url_for('home') }}">← Back to Home</a></p>
+    
+    <p>
+      <br>
+      <a href="{{ url_for('home') }}">← Back to Home</a>
+      <br>
+      <a href="{{ url_for('friend') }}">← See others profile!</a>
+    </p>
   </div>
 </body>
 </html>
